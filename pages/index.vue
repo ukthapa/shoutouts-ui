@@ -2,6 +2,7 @@
   <div class="flex justify-between px-4 min-h-screen">
     <main class="flex-1 pt-20 pb-12">
       <div class="max-w-screen-xl mx-auto pr-4">
+        <AddShout />
         <Content />
       </div>
     </main>
@@ -11,11 +12,13 @@
 
 <script>
 import Sidebar from '~/components/Sidebar.vue'
+import AddShout from '~/components/AddShout.vue'
 import Content from '~/components/Content.vue'
 
 export default {
   components: {
     Sidebar,
+    AddShout,
     Content
   }
 }
