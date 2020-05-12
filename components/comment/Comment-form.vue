@@ -1,7 +1,7 @@
 <template>
   <div
     ref="commentForm"
-    class="comment-form-wrapper flex items-start border border-gray-400 rounded bg-gray-100 p-4"
+    class="comment-form-wrapper flex items-start bg-gray-100 p-4"
   >
     <div class="profile-img-holder mr-2">
       <img
@@ -15,7 +15,7 @@
     <div class="form-block">
       <div class="relative flex items-start">
         <textarea
-          ref="input"
+          ref="commentNew"
           name="text"
           class="w-full h-10 bg-gray-100 py-1 outline-none"
           placeholder="Leave a comment"
@@ -43,6 +43,7 @@
             alt=""
           />
           <input
+            ref="addGold"
             type="number"
             class="w-full bg-gray-100 p-2 outline-none"
             placeholder="Add Gold"
@@ -83,6 +84,7 @@
           </button>
           <button
             class="bg-teal-500 hover:bg-teal-400 transition duration-500 ease-in-out  text-white uppercase shadow rounded focus:outline-none px-3 py-1"
+            @click="addComment"
           >
             Post
           </button>
@@ -102,7 +104,19 @@ export default {
   data() {
     return {
       showCan: true,
-      isFormFooterVisible: false
+      isFormFooterVisible: false,
+      personList: [
+        {
+          fname: 'Jonathan Fields',
+          profileImg: 'profile1.png',
+          day: 1
+        },
+        {
+          fname: 'Vijay Kaumar',
+          profileImg: 'profile2.png',
+          day: 2
+        }
+      ]
     }
   },
   mounted() {
@@ -110,7 +124,7 @@ export default {
   },
   methods: {
     onFocus() {
-      this.$nextTick(() => this.$refs.input.focus())
+      this.$nextTick(() => this.$refs.commentNew.focus())
     },
     checkInput(event) {
       if (event.target.value !== '') {
@@ -124,6 +138,20 @@ export default {
     hideCommentBox() {
       this.$nuxt.$emit('delectActiveBlockClass', this.sectionInfo)
       this.$nuxt.$emit('removeCommentBlock', false)
+    },
+    addComment() {
+      const num = Math.ceil(Math.random() * 2)
+      const commentNew = {
+        fname: this.personList[num - 1].fname,
+        img: this.personList[num - 1].profileImg,
+        id: this.sectionInfo[0],
+        comment: this.$refs.commentNew.value,
+        gold: this.$refs.addGold.value,
+        day: Math.ceil(Math.random() * 10),
+        hifi: Math.ceil(Math.random() * 4)
+      }
+      this.$nuxt.$emit('addComment', commentNew)
+      this.hideCommentBox()
     }
   }
 }

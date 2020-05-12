@@ -1,12 +1,12 @@
 <template>
-  <div class="grid grid-cols-6  lg:grid-cols-9 gap-4 py-6">
+  <div class="grid grid-cols-6  lg:grid-cols-9 gap-6 py-6">
     <div class="col-start-1 col-span-4 lg:col-start-3 lg:col-span-5 relative">
       <div
         class="card-wrapper"
         :class="{ active: shout[1].i === hoverItem }"
         @mouseenter="selectItem(shout[1].i, shout[0].id)"
         @mouseleave="deselectItem(shout[1].i, shout[0].id)"
-        @delectActiveBlockClasss="delectActiveBlock(shout[1].i, shout[0].id)"
+        @delectActiveBlockClass="delectActiveBlock(shout[1].i, shout[0].id)"
       >
         <div
           id="toolbox"
@@ -222,7 +222,7 @@
     </div>
     <div class="col-start-5 col-span-2 lg:col-start-8 lg:col-span-2">
       <Comment
-        v-if="isCommentActive"
+        :is-comment-box-active="isCommentActive"
         :section-info="[shout[0].id, shout[1].i]"
       />
     </div>
