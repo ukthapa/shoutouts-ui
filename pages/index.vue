@@ -14,7 +14,6 @@
 import Sidebar from '~/components/Sidebar.vue'
 import AddShout from '~/components/AddShout.vue'
 import Content from '~/components/Content.vue'
-
 export default {
   components: {
     Sidebar,

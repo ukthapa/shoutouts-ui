@@ -10,8 +10,8 @@
         <div
           class="card-wrapper"
           :class="{ active: i === activeItem }"
-          @mouseover="selectItem(i)"
-          @mouseout="deselectItem(i)"
+          @mouseenter="selectItem(i, shout.id)"
+          @mouseleave="deselectItem(i, shout.id)"
         >
           <div
             id="toolbox"
@@ -40,7 +40,7 @@
                 />
               </svg>
             </button>
-            <button class="flex-grow">
+            <button class="flex-grow" @click="openCommentBox(shout.id, i)">
               <svg
                 width="20"
                 height="20"
@@ -221,16 +221,21 @@
         </div>
       </div>
       <div class="col-start-5 col-span-2 lg:col-start-8 lg:col-span-2">
-        test
+        <Comment :class="isCommentActive ? 'active' : ''" />
       </div>
     </div>
   </div>
 </template>
 <script>
+import Comment from '~/components/Comment.vue'
 export default {
+  components: {
+    Comment
+  },
   data() {
     return {
       activeItem: null,
+      isCommentActive: false,
       shoutoutList: [
         {
           id: 'shout-1',
@@ -282,11 +287,30 @@ export default {
     }
   },
   methods: {
-    selectItem(i) {
-      this.activeItem = i
+    selectItem(i, id) {
+      const elem = document
+        .getElementById(id)
+        .getElementsByClassName('card-wrapper')[0]
+        .className.split(' ')
+      if (!elem.includes('active-block')) {
+        this.activeItem = i
+      }
     },
-    deselectItem(i) {
-      this.activeItem = null
+    deselectItem(i, id) {
+      const elem = document
+        .getElementById(id)
+        .getElementsByClassName('card-wrapper')[0]
+        .className.split(' ')
+      if (!elem.includes('active-block')) {
+        this.activeItem = null
+      }
+    },
+    openCommentBox(id) {
+      document
+        .getElementById(id)
+        .getElementsByClassName('card-wrapper')[0]
+        .classList.add('active-block')
+      this.isCommentActive = true
     }
   }
 }
