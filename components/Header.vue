@@ -6,7 +6,7 @@
       <div class="pr-4 flex items-center">
         <div class="pr-3 ">
           <button
-            class="transition-opacity duration-300 ease-in-out hover:opacity-50"
+            class="transition-opacity duration-300 ease-in-out hover:opacity-50 focus:outline-none"
           >
             <img
               src="../assets/images/hamburger-icon.svg"
@@ -19,7 +19,7 @@
         <div class="pl-3 text-gray-600 ">
           <nuxt-link
             to="/"
-            class="text-opacity-50 flex items-center content-center"
+            class="text-opacity-50 flex items-center content-center focus:outline-none"
           >
             <img
               src="../static/shoutout-logo.svg"
