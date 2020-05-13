@@ -12,7 +12,7 @@
           id="toolbox"
           class="flex justify-content items-center absolute w-48 hidden divide-x divide-gray-300 hover:divide-gray-600 border border-gray-300 hover:border-gray-500 rounded-lg bg-white"
         >
-          <button class="flex-grow">
+          <button class="flex-grow focus:outline-none">
             <svg
               width="24"
               height="24"
@@ -36,7 +36,7 @@
             </svg>
           </button>
           <button
-            class="flex-grow"
+            class="flex-grow focus:outline-none"
             @click="openCommentBox(shout[0].id, shout[1].i)"
           >
             <svg
@@ -53,7 +53,7 @@
               />
             </svg>
           </button>
-          <button class="flex-grow">
+          <button class="flex-grow focus:outline-none">
             <svg
               width="24"
               height="24"
@@ -68,7 +68,7 @@
               />
             </svg>
           </button>
-          <button class="flex-grow">
+          <button class="flex-grow focus:outline-none">
             <svg
               width="24"
               height="24"

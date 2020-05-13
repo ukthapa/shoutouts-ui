@@ -1,7 +1,7 @@
 {
   "name": "shoutouts",
   "version": "1.0.0",
-  "description": "comment option UI in Nuxt, Tailwind and Localstorage",
+  "description": "Comment option UI in Nuxt, Tailwind and Localstorage",
   "author": "ukthapa",
   "private": true,
   "scripts": {

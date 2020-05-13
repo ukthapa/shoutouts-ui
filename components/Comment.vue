@@ -79,7 +79,7 @@ export default {
 }
 </script>
 <style scoped>
-.commets-block {
+/* .commets-block {
   max-height: 230px;
-}
+} */
 </style>

@@ -17,7 +17,7 @@
               <div>
                 <input
                   type="text"
-                  class="w-full text-4xl placeholder-gray-400 leading-0 font-semibold"
+                  class="w-full text-4xl placeholder-gray-400 leading-0 font-semibold outline-none"
                   placeholder="Type a person to shoutout"
                 />
               </div>
@@ -32,7 +32,7 @@
                 />
                 <input
                   type="text"
-                  class="w-full text-xl placeholder-gray-400 leading-0 font-normal"
+                  class="w-full text-xl placeholder-gray-400 leading-0 font-normal outline-none"
                   placeholder="Add gold (optional)"
                 />
               </div>
@@ -44,7 +44,7 @@
             <div class="card-footer my-4">
               <input
                 type="text"
-                class="w-full placeholder-gray-400 leading-0 font-normal"
+                class="w-full placeholder-gray-400 leading-0 font-normal outline-none"
                 placeholder="Give them a meaningful message"
               />
             </div>

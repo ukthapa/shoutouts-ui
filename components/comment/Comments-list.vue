@@ -8,7 +8,7 @@
         :alt="commentsData.name"
         class="rounded-full border-2 border-white mr-2"
       />
-      <div class="pb-3">
+      <div class="pb-3 flex-grow">
         <div ref="nameBlock" class="">
           <h1 class="text-sm font-medium">{{ commentsData.fname }}</h1>
           <div
@@ -23,7 +23,7 @@
           </div>
           <div class="font-thin">{{ commentsData.comment }}</div>
           <div class="my-2 flex items-center justify-between">
-            <div class="flex items-center justify-start">
+            <div class="flex items-center justify-start w-full">
               <div
                 v-if="commentsData.hifi >= 0"
                 class="flex items-center font-normal text-sm text-gray-600 hover:text-gray-700 border border-gray-200 hover:border-teal-400 bg-gray-200  hover:bg-teal-100 rounded-full px-2 py-0 mr-2 cursor-pointer"
